@@ -1,0 +1,429 @@
+@media screen and (min-width: 480px) and (max-width: 720px) {
+    /* Reset complet */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Structure de base */
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Section articles */
+    .first {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .articles-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .articles {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Style des articles */
+    .article-content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    .article-image-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 0;
+    }
+
+    .article-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .article-text {
+        padding: 1rem;
+    }
+
+    .article-text h2 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .article-text p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .article-meta {
+        margin-bottom: 1rem;
+    }
+
+    /* Conteneur du bouton pour le centrage */
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    /* Style du bouton Nike amélioré avec animation éclair */
+    .btn {
+        position: relative;
+        display: inline-block;
+        width: auto;
+        min-width: 200px;
+        padding: 15px 30px;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 2px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .btn-text {
+        position: relative;
+        z-index: 2;
+        font-size: 0.9rem;
+    }
+
+    .btn-flash {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 80%,
+            transparent 100%
+        );
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 20%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0.1) 80%,
+            transparent 100%
+        );
+        transition: all 0.4s ease;
+        z-index: 1;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 7px 17px rgba(0, 0, 0, 0.2);
+        letter-spacing: 3px;
+    }
+
+    .btn:hover .btn-flash {
+        left: 100%;
+        transition: all 0.6s ease;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+        transition: all 0.5s ease;
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Animation d'entrée au défilement */
+    [data-aos="fade-up"] .btn-flash {
+        left: -100%;
+    }
+
+    [data-aos="fade-up"].aos-animate .btn-flash {
+        animation: flashAnimation 1.2s ease-out forwards;
+    }
+
+    @keyframes flashAnimation {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+
+    /* Animation du texte */
+    [data-aos="fade-up"].aos-animate .btn-text {
+        animation: textReveal 0.5s ease-out forwards;
+    }
+
+    @keyframes textReveal {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animation supplémentaire pour le texte */
+    .btn:hover .btn-text {
+        animation: textGlow 0.5s ease-in-out;
+    }
+
+    @keyframes textGlow {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Suppression des marges Tailwind */
+    .container,
+    .mx-auto,
+    .p-4,
+    .flex,
+    .justify-items-center {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Masquer éléments non nécessaires */
+    .sidebar,
+    .contents-payant {
+        display: none;
+    }
+
+    /* Menu mobile */
+    .dropdown {
+        display: none;
+        position: relative;
+    }
+
+    .dropdown-button {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .menu-icon {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 15px 20px;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid #eee;
+        transition: background 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        background: #f8f8f8;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    .dropdown.active .menu-icon {
+        transform: rotate(180deg);
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Style Nike pour les articles en vedette */
+    .featured-articles {
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        background: #f5f5f5;
+    }
+
+    .article-card {
+        position: relative;
+        padding: 2rem 1.5rem;
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .article-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .article-category {
+        display: inline-block;
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #757575;
+        margin-bottom: 1rem;
+    }
+
+    .article-card h3 {
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #111;
+        margin-bottom: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .article-card:hover h3 {
+        color: #000;
+    }
+
+    .article-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #000;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    .article-card:hover .article-overlay {
+        transform: scaleX(1);
+    }
+
+    /* Animation au défilement */
+    [data-aos="fade-up"] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-aos="fade-up"].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Ajout d'une ombre portée au survol */
+    .article-card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .article-card:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+}
+
+/* Forcer la largeur complète sur tous les écrans de la plage */
+@media screen and (min-width: 480px) and (max-width: 720px) and (orientation: portrait) {
+    .container,
+    .first,
+    .articles,
+    .article-content,
+    footer,
+    .footer-content {
+        max-width: none !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
+    .container,
+    .first,
+    .articles,
+    .article-content,
+    footer,
+    .footer-content {
+        max-width: none !important;
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 720px) {
+    /* Cacher la navigation normale sur mobile */
+    nav {
+        display: none;
+    }
+
+    /* Afficher le menu déroulant sur mobile */
+    .dropdown {
+        display: block;
+    }
+}

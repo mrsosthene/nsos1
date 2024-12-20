@@ -1,0 +1,145 @@
+/* Styles pour écrans de 480px à 720px */
+@media screen and (min-width: 480px) and (max-width: 720px) {
+    /* Masquer les éléments non désirés */
+    .article,
+    .contents-payant,
+    .space-y-4,
+    .mt-32 {
+        display: none !important;
+    }
+
+    /* Header et navigation */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: white;
+    }
+
+    header .container {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Style du menu déroulant */
+    .space-x-4 {
+        display: none !important;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-button {
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: white;
+        width: 200px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 4px;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+
+    /* Main content */
+    main.container {
+        margin-top: 4rem !important;
+        padding: 1rem !important;
+        width: 100% !important;
+    }
+
+    /* Image principale */
+    .relative {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .relative img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+        margin: 1rem 0;
+        background: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Articles populaires dans la sidebar */
+    .sidebar-article {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 4px;
+    }
+
+    .sidebar-article img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .sidebar-article h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Barre de recherche */
+    .search-container {
+        margin: 1rem 0;
+    }
+
+    .search-container input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+}

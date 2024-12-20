@@ -1,0 +1,105 @@
+/* Styles spécifiques pour écran 1920x1080 */
+
+@media screen and (min-width: 1920px) {
+    /* Masquer les éléments non désirés */
+    .article,
+    .contents-payant,
+    .space-y-4,
+    .mt-32 {
+        display: none !important;
+    }
+
+    /* Ajuster le conteneur principal */
+    main.container {
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Centrer la div relative et ajuster sa taille */
+    .relative {
+        width: 60%;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .relative img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Ajuster la sidebar */
+    .sidebar {
+        width: 80%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Style du menu déroulant */
+    .nav-menu {
+        display: none !important;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-button {
+        background: white;
+        border: 1px solid #e2e8f0;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+        color: #4a5568;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: white;
+        min-width: 200px;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 0.75rem 1rem;
+        display: block;
+        color: #4a5568;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .dropdown-content a:hover {
+        background: #f7fafc;
+        color: #2b6cb0;
+    }
+
+    /* Masquer la navigation normale */
+    .space-x-4 {
+        display: none !important;
+    }
+}

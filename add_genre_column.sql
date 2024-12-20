@@ -1,0 +1,2 @@
+ALTER TABLE users
+ADD COLUMN genre VARCHAR(10) NOT NULL AFTER password;
